@@ -26,15 +26,15 @@ public class JavaDateTimeApi {
         String stringFormatter = "";
 
         switch (datePart) {
-            case FULL:  stringFormatter = "yyyy-MM-dd";
-                        break;
-            case YEAR:  stringFormatter = "yyyy";
-                        break;
+            case FULL: stringFormatter = "yyyy-MM-dd";
+                       break;
+            case YEAR: stringFormatter = "yyyy";
+                       break;
             case MONTH: stringFormatter = "MMMM";
                         break;
-            case DAY:   stringFormatter = "dddd";
-                        break;
-            default:    throw new DateTimeException("");
+            case DAY: stringFormatter = "dddd";
+                      break;
+            default: throw new DateTimeException("");
         }
 
         return LocalDate.now().format(DateTimeFormatter.ofPattern(stringFormatter));
@@ -155,8 +155,8 @@ public class JavaDateTimeApi {
         Optional<LocalDate> thisDate;
 
         try {
-            thisDate = Optional.of(LocalDate.parse(date
-                    , DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH)));
+            thisDate = Optional.of(LocalDate.parse(date,
+                    DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ENGLISH)));
         } catch (Exception e) {
             thisDate = Optional.empty();
         }
